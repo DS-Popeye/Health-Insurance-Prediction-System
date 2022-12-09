@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Rubik+Vinyl&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        /* Navbar */
+        nav a {
+            text-decoration: none;
+            color: white;
+            padding: 10px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            background-color: black;
+            padding: 20px 10px;
+        }
+
+        #h2-name {
+            font-size: 20px;
+            font-weight: 700;
+            border: none;
+        }
+
+        .hover:hover {
+            background-color: gray;
+            color: whitesmoke;
+            border-radius: 5px;
+        }
+
+        .hover-logout:hover {
+            background-color: blueviolet;
+            color: whitesmoke;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        /* Footer */
+        footer {
+            background-color: black;
+            color: white;
+            padding: 15px 0;
+        }
+
+        footer>h2 {
+            text-align: center;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <span>
+                <a id="h2-name" href="#">Health Insurance Prediction</a>
+                <a class="hover" href="{{ url_for('customer')}}">Customer</a>
+                <a class="hover" href="{{ url_for('admin')}}">Admin</a>
+            </span>
+            <span>
+                <a class="hover" href="{{ url_for('about')}}">About Us</a>
+                <a class="hover" href="help">Help</a>
+            </span>
+        </nav>
+    </header>
+    <img class="home-img" src="{{ url_for('static', filename='homepage.jpg') }}" alt="">
+</body>
+
+<footer class="footer">
+    <h2>All right reserve &copy; MD RABIUL AWAL SHUVO</h2>
+</footer>
+
+</html>
