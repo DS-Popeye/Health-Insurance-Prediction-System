@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+
+  <link href="http://netdna.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet">
+
+  <style type="text/css">
+    @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Rubik+Vinyl&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      text-decoration: none;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+
+    /* Navbar */
+    nav a {
+      text-decoration: none;
+      color: white;
+      padding: 10px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      background-color: black;
+      height: 60px;
+    }
+
+    #h2-name {
+      font-size: 20px;
+      font-weight: 700;
+      border: none;
+    }
+
+    .hover:hover {
+      background-color: gray;
+      color: whitesmoke;
+      border-radius: 10px;
+    }
+
+    .hover-logout:hover {
+      background-color: blueviolet;
+      color: whitesmoke;
+      border-radius: 10px;
+    }
+
+    /* Sidebar */
+
+    .sidebar>img {
+      width: 100%;
+      padding: 0 25%;
+    }
+
+    .sidebar>h1 {
+      text-align: center;
+      color: white;
+      font-size: 30px;
+      font-family: 'Rubik Vinyl', cursive;
+    }
+
+    .sidebar {
+      position: fixed;
+      left: 0;
+      width: 15%;
+      height: 100%;
+      background-color: #042331;
+    }
+
+    .sidebar ul a {
+      display: block;
+      height: 100%;
+      width: 100%;
+      line-height: 65px;
+      font-size: 20px;
+      color: white;
+      padding-left: 40px;
+      box-sizing: border-box;
+      border-top: 1px solid rgba(255, 255, 255, .1);
+      border-bottom: 1px solid black;
+      transition: .4s;
+    }
+
+    ul li:hover a {
+      padding: 10px;
+    }
+
+    /* Container */
+
+    a:link {
+      text-decoration: none;
+    }
+
+    .order-card {
+      color: rgb(255, 255, 255);
+    }
+
+    .bg-c-blue {
+      background: #04868f;
+    }
+
+    .bg-c-green {
+      background: #4C51BF;
+    }
+
+    .bg-c-yellow {
+      background: #F56565;
+    }
+
+    .bg-c-pink {
+      background: #663a30;
+    }
+
+    .card {
+
+      -webkit-box-shadow: 0 1px 2.94px 0.06px rgba(4, 26, 55, 0.16);
+      box-shadow: 0 1px 2.94px 0.06px rgba(4, 26, 55, 0.16);
+      border: 1px solid black;
+      margin-bottom: 30px;
+      -webkit-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .card .card-block {
+      padding: 25px;
+    }
+
+    .order-card i {
+      font-size: 26px;
+    }
+
+    .f-left {
+      float: left;
+    }
+
+    .f-right {
+      float: right;
+    }
+
+    header {
+      left: 0px;
+      right: 0px;
+    }
+
+    .container {
+      padding-left: 10%;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <span>
+        <a id="h2-name" href="#">Health Insurance Prediction</a>
+      </span>
+      <span>
+        <a class="hover" href="{{ url_for('help')}}">Help</a>
+        <a class="hover-logout" href="{{ url_for('home')}}">LogOut</a>
+      </span>
+    </nav>
+  </header>
+
+  <section>
+    <div class="sidebar">
+      <img src="{{ url_for('static', filename='admin.png') }}" alt="">
+      <h1>ADMIN</h1>
+      <ul>
+        <li><a href="">Dashboard</a></li>
+        <li><a href="{{ url_for('index')}}">Prediction</a></li>
+        <li><a href="">Customer</a></li>
+        <li><a href="">Category</a></li>
+        <li><a href="">Policy</a></li>
+        <li><a href="">Questions</a></li>
+      </ul>
+    </div>
+  </section><br>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-xl-3">
+        <div class="card bg-c-green order-card">
+          <div class="card-block">
+            <h6 class="m-b-20"> <a href="apply-policy" style="text-decoration: none;color:white;">Available Policy</a>
+            </h6>
+            <h2 class="text-right"><i class="fab fa-product-hunt f-left">0</i></h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-xl-3">
+        <div class="card bg-c-green order-card">
+          <div class="card-block">
+            <h6 class="m-b-20"><a href="history" style="text-decoration: none;color:white;">Applied Policy</a> </h6>
+            <h2 class="text-right"><i class="fab fa-product-hunt f-left">0</i></h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-xl-3">
+        <div class="card bg-c-green order-card">
+          <div class="card-block">
+            <h6 class="m-b-20"><a href="/" style="text-decoration: none;color:white;">Policy Categories</a></h6>
+            <h2 class="text-right"><i class="fas fa-list-alt f-left">0</i></h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-xl-3">
+        <div class="card bg-c-green order-card">
+          <div class="card-block">
+            <h6 class="m-b-20"><a href="question-history" style="text-decoration: none;color:white;">Total Question
+                Asked</a></h6>
+            <h2 class="text-right"><i class="fas fa-question-circle f-left">0</i></h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
