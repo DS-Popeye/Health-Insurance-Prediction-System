@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Rubik+Vinyl&display=swap');
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            padding: 5px;
+            list-style: none;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            background-color: black;
+            padding: 20px 10px;
+        }
+
+        #h2-name {
+            font-size: 20px;
+            font-weight: 700;
+            border: none;
+            background-color: black;
+        }
+
+        .hover:hover {
+            background-color: gray;
+            text-decoration: none;
+            color: white;
+        }
+
+        .hover-1:hover {
+            text-decoration: none;
+            color: white;
+        }
+
+        .hover-logout:hover {
+            background-color: blueviolet;
+        }
+
+        /* Footer */
+        footer {
+            background-color: black;
+            color: white;
+            padding: 10px 0;
+        }
+
+        footer>h4 {
+            text-align: center;
+        }
+    </style>
+
+    <title>Health Ensurance</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <span>
+                <a id="h2-name" class="hover-1" href="#">Health Insurance Prediction</a>
+                <a class="hover" href="{{url_for('customer')}}">Customer</a>
+                <a class="hover" href="{{url_for('admin')}}">Admin</a>
+            </span>
+            <span>
+                <a class="hover" href="{{url_for('about')}}">About Us</a>
+                <a class="hover" href="{{url_for('help')}}">Help</a>
+            </span>
+        </nav>
+    </header>
+
+
+    <div class='container'>
+
+        <h3 class="text-center" style="padding-top: 30px;">Health Insurence Premium Prediction</h3><br>
+
+        <h5 class='text-center'>Please enter your info in bellow form</h5>
+        <div class="row" class='form-control'>
+            <form action="{{url_for('pridict')}}" method="post">
+
+                <!-- age, bmi,children,['gender']_male, region_northeast, region_northwest, region_southeast, region_southwest, smoker_yes -->
+
+                <div class="form-group">
+                    <label>Age</label>
+                    <input type="number" class="form-control" name="age">
+                </div>
+                <div class="form-group">
+                    <label>BMI</label>
+                    <input type="number" class="form-control" name="bmi">
+                </div>
+                <div class="form-group">
+                    <label>Children</label>
+                    <input type="number" class="form-control" name="children" placeholder="Max 5">
+                </div>
+                <div class="form-group">
+                    <label>Gender</label>
+                    <select name='gender' class="form-control">
+                        <option value="0">Female</option>
+                        <option value="1">Male</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Region</label>
+                    <select name='region' class="form-control">
+                        <option value="region_northeast">region northeast</option>
+                        <option value="region_northwest">region northwest</option>
+                        <option value="region_southeast">region southeast</option>
+                        <option value="region_southwestv">region southwestv</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Smoker</label>
+                    <select name='smoker' class="form-control">
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+                <button type="submit" value="Submit" class='btn btn-primary'>Submit</button>
+            </form>
+        </div>
+        <div class='row'>
+            <div class="card m-5 p-5">{{prediction}}</div>
+        </div>
+    </div>
+    <footer class="footer">
+        <h4>All right reserve &copy; MD RABIUL AWAL SHUVO</h4>
+    </footer>
+
+</body>
+
+</html>
