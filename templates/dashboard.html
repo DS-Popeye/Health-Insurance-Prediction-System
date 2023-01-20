@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+
+    <!-- Font-Awesome -->
+    <script src="https://kit.fontawesome.com/82515527f8.js" crossorigin="anonymous"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Rubik+Vinyl&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            padding: 5px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            background-color: black;
+            padding: 20px 10px;
+        }
+
+        #h2-name {
+            font-size: 20px;
+            font-weight: 700;
+            border: none;
+            background-color: black;
+        }
+
+        .hover:hover {
+            background-color: gray;
+        }
+
+        .hover-logout:hover {
+            background-color: blueviolet;
+        }
+
+        .home-img {
+            width: 100%;
+        }
+
+        .sidebar>img {
+            width: 50%;
+            padding: 0 25%;
+        }
+
+        .sidebar>h1 {
+            padding: 0 20% 25% 25%;
+            color: white;
+            font-size: 30px;
+            font-family: 'Rubik Vinyl', cursive;
+        }
+
+        .sidebar {
+            position: fixed;
+            left: 0;
+            width: 15%;
+            height: 100%;
+            background-color: #042331;
+        }
+
+        .sidebar ul a {
+            display: block;
+            height: 100%;
+            width: 100%;
+            line-height: 65px;
+            font-size: 20px;
+            color: white;
+            padding-left: 40px;
+            box-sizing: border-box;
+            border-top: 1px solid rgba(255, 255, 255, .1);
+            border-bottom: 1px solid black;
+            transition: .4s;
+        }
+
+        ul li:hover a {
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <span>
+                <a id="h2-name" href="#">Health Insurance Prediction</a>
+                <a class="hover" href="#">Customer</a>
+                <a class="hover" href="#">Admin</a>
+            </span>
+            <span>
+                <a class="hover" href="#">About Us</a>
+                <a class="hover" href="#">Help</a>
+                <a class="hover-logout" href="#">LogOut</a>
+            </span>
+        </nav>
+    </header>
+
+    <section>
+        <div class="sidebar">
+            <img src="images/admin.png" alt="">
+            <h1>ADMIN</h1>
+            <ul>
+
+                <li><a href="">Dashboard</a></li>
+                <li><a href="">Prediction</a></li>
+                <li><a href="">Customer</a></li>
+                <li><a href="">Category</a></li>
+                <li><a href="">Policy</a></li>
+                <li><a href="">Questions</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="grid">
+        <div class="block">
+            <h1>Registerd</h1>
+        </div>
+
+        <div class="block">
+            <h1>Registerd</h1>
+        </div>
+
+        <div class="block">
+            <h1>Registerd</h1>
+        </div>
+
+        <div class="block">
+            <h1>Registerd</h1>
+        </div>
+
+        <div class="block">
+            <h1>Registerd</h1>
+        </div>
+
+        <div class="block">
+            <h1>Registerd</h1>
+        </div>
+
+    </section>
+
+</body>
+
+</html>
